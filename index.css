@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ink text-bone font-body antialiased;
+  font-feature-settings: 'ss01' 1;
+}
+
+::selection {
+  background: #c5a059;
+  color: #12100e;
+}
+
+/* thin luxury scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #12100e;
+}
+::-webkit-scrollbar-thumb {
+  background: #2b2620;
+  border-radius: 999px;
+  border: 2px solid #12100e;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a332a;
+}
+
+/* visible keyboard focus, kept quiet but present everywhere */
+:focus-visible {
+  outline: 1px solid #c5a059;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.eyebrow {
+  @apply text-[11px] tracking-widest2 uppercase text-gold font-body font-medium;
+}
+
+.hairline {
+  @apply border-line;
+}
+
+.gold-underline {
+  position: relative;
+}
+.gold-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, #c5a059, transparent);
+}
